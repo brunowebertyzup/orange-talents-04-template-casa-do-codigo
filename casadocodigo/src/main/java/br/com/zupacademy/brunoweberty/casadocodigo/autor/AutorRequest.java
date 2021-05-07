@@ -31,4 +31,8 @@ public class AutorRequest {
 	public String toString() {
 		return "AlunoRequest [nome=" + nome + ", email=" + email + ", descricao=" + descricao + "]";
 	}
+
+	public String getEmail() {
+		return email;
+	}
 }

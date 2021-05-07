@@ -1,5 +1,7 @@
 package br.com.zupacademy.brunoweberty.casadocodigo.autor;
 
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -21,6 +23,10 @@ public class AutorController {
 	@PostMapping
 	@Transactional
 	public ResponseEntity<?> cadastrar(@RequestBody @Valid AutorRequest request, UriComponentsBuilder uriBuilder) {
+		Optional<Autor> verificaEmail = autorRepository.findByEmail(request.getEmail());
+		if(verificaEmail.isPresent()) {
+			return ResponseEntity.badRequest().build();
+		}
 		Autor autor = request.converteEmModelo();
 		autorRepository.save(autor);
 		return ResponseEntity.ok(autor.toString());
