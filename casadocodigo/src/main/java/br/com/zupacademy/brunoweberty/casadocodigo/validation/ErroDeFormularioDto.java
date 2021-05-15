@@ -1,28 +1,19 @@
 package br.com.zupacademy.brunoweberty.casadocodigo.validation;
 
 public class ErroDeFormularioDto {
-	private String campo;
-	private String erro;
+	private String field;
+	private String error;
 
-	public ErroDeFormularioDto(String campo, String erro) {
-		super();
-		this.campo = campo;
-		this.erro = erro;
+	public ErroDeFormularioDto(String field, String error) {
+		this.field = field;
+		this.error = error;
 	}
 
-	public String getCampo() {
-		return campo;
+	public String getField() {
+		return field;
 	}
 
-	public void setCampo(String campo) {
-		this.campo = campo;
-	}
-
-	public String getErro() {
-		return erro;
-	}
-
-	public void setErro(String erro) {
-		this.erro = erro;
+	public String getError() {
+		return error;
 	}
 }
