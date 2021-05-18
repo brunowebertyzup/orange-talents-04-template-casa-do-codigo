@@ -5,6 +5,8 @@ import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 
+import br.com.zupacademy.brunoweberty.casadocodigo.compartilhado.VerificaExistenciaNoBanco;
+
 public class AutorRequest {
 
 	@NotBlank
@@ -12,6 +14,7 @@ public class AutorRequest {
 	private String nome;
 	@NotBlank
 	@Email
+	@VerificaExistenciaNoBanco(campo = "email", tabela = Autor.class)
 	private String email;
 	@NotBlank
 	@Length(min = 10, max = 400)

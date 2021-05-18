@@ -2,9 +2,12 @@ package br.com.zupacademy.brunoweberty.casadocodigo.categoria;
 
 import javax.validation.constraints.NotBlank;
 
+import br.com.zupacademy.brunoweberty.casadocodigo.compartilhado.VerificaExistenciaNoBanco;
+
 public class CategoriaRequest {
 
 	@NotBlank
+	@VerificaExistenciaNoBanco(campo = "nome", tabela = Categoria.class)
 	private String nome;
 	
 	public CategoriaRequest() {

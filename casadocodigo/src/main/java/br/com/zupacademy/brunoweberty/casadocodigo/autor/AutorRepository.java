@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface AutorRepository extends CrudRepository<Autor, Long>{
 	
 	Optional<Autor> findByEmail(String email);
-	
+	boolean existsByEmail(String email);
 }
