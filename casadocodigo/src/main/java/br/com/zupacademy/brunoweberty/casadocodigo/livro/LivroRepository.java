@@ -1,9 +1,9 @@
 package br.com.zupacademy.brunoweberty.casadocodigo.livro;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LivroRepository extends CrudRepository<Livro, Long>{
+public interface LivroRepository extends JpaRepository<Livro, Long>{
 
 }
