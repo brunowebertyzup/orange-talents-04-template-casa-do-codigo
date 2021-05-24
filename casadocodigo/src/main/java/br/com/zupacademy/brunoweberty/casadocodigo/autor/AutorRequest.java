@@ -26,6 +26,12 @@ public class AutorRequest {
 		this.descricao = descricao;
 	}
 	
+	public AutorRequest(Autor autor) {
+		this.nome = autor.getNome();
+		this.email = autor.getEmail();
+		this.descricao = autor.getDescricao();
+	}
+	
 	public Autor converteEmModelo() {
 		return new Autor(this.nome, this.email, this.descricao);
 	}
@@ -37,5 +43,13 @@ public class AutorRequest {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getDescricao() {
+		return descricao;
 	}
 }

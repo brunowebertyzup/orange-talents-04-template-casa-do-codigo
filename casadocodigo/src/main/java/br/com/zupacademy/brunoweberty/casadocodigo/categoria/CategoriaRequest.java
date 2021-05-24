@@ -5,7 +5,6 @@ import javax.validation.constraints.NotBlank;
 import br.com.zupacademy.brunoweberty.casadocodigo.compartilhado.VerificaExistenciaNoBanco;
 
 public class CategoriaRequest {
-
 	@NotBlank
 	@VerificaExistenciaNoBanco(campo = "nome", tabela = Categoria.class)
 	private String nome;
@@ -15,6 +14,10 @@ public class CategoriaRequest {
 
 	public CategoriaRequest(String nome) {
 		this.nome = nome;
+	}
+	
+	public CategoriaRequest(Categoria categoria) {
+		this.nome = categoria.getNome();
 	}
 
 	public String getNome() {
